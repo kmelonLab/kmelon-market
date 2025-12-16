@@ -105,6 +105,7 @@ Build useful tools that empower individual developers and enable creativity, pro
 | X(Twitter) | https://x.com/habom_IT | *(예: 후원자 감사 메시지 게시 가능)*  
 | Youtube | https://www.youtube.com/@habomIT |
 | KakaoTalk | https://open.kakao.com/o/gCG7vvZh |
+| Habom Community | https://hub.habom.kr |
 
 Feel free to reach out anytime!  
 언제든 편하게 연락주세요!
