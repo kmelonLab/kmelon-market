@@ -24,6 +24,16 @@ Your support helps sustain development, pay server costs, and deliver continuous
 
 ---
 
+## 🎬 Promo Video (홍보 영상)
+
+<!-- 썸네일 이미지를 클릭하면 YouTube로 이동합니다 -->
+[![Watch Video](habom-market.png)](https://www.youtube.com/watch?v=fXdkc8rQvho)
+
+📺 Click the image above to watch the video<br>
+📺 위 이미지를 클릭하면 영상을 볼 수 있습니다
+
+---
+
 ## 🚀 Features (주요 기능)
 
 ### 🌐 Public Features (공개 기능)
