@@ -1,0 +1,6 @@
+# MySQL 소켓 및 데이터 파일
+habom-localhost/mysql-market/data/
+habom-localhost/mysql-pay/data/
+
+# 일반적인 MySQL 소켓 파일
+*.sock

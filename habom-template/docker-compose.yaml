@@ -1,0 +1,119 @@
+﻿version: '3.8'
+
+services:
+  # ============================================
+  # MySQL for Backend-Market
+  # ============================================
+  mysql-market:
+    image: mysql:8.4.2
+    container_name: habom-market-mysql
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      MYSQL_DATABASE: ${MYSQL_MARKET_DATABASE}
+      MYSQL_USER: ${MYSQL_USER}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+      TZ: ${TZ}
+    ports:
+      - "${MYSQL_MARKET_PORT}:3306"
+    volumes:
+      - ./mysql-market/data:/var/lib/mysql
+      - ./mysql-market/init:/docker-entrypoint-initdb.d
+    command:
+      - --character-set-server=utf8mb4
+      - --collation-server=utf8mb4_unicode_ci
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+      start_period: 30s
+    networks:
+      - market-network
+
+  # ============================================
+  # MySQL for Backend-Pay
+  # ============================================
+  mysql-pay:
+    image: mysql:8.4.2
+    container_name: habom-pay-mysql
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      MYSQL_DATABASE: ${MYSQL_PAY_DATABASE}
+      MYSQL_USER: ${MYSQL_USER}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+      TZ: ${TZ}
+    ports:
+      - "${MYSQL_PAY_PORT}:3306"
+    volumes:
+      - ./mysql-pay/data:/var/lib/mysql
+      - ./mysql-pay/init:/docker-entrypoint-initdb.d
+    command:
+      - --character-set-server=utf8mb4
+      - --collation-server=utf8mb4_unicode_ci
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+      start_period: 30s
+    networks:
+      - market-network
+
+  # ============================================
+  # Backend-Pay (NestJS)
+  # ============================================
+  backend-pay:
+    image: habom/backend-pay:1.0.7
+    container_name: habom-market-pay
+    restart: always
+    env_file:
+      - ./backend-pay/.env.production
+    ports:
+      - "${BACKEND_PAY_PORT}:8080"
+    depends_on:
+      mysql-pay:
+        condition: service_healthy
+    networks:
+      - market-network
+
+  # ============================================
+  # Backend-Market (NestJS)
+  # ============================================
+  backend-market:
+    image: habom/backend-market:1.0.7
+    container_name: habom-market-backend
+    restart: always
+    env_file:
+      - ./backend-market/.env.production
+    ports:
+      - "${BACKEND_MARKET_PORT}:8081"
+    volumes:
+      - ./backend-market/uploads:/app/uploads
+    depends_on:
+      mysql-market:
+        condition: service_healthy
+    networks:
+      - market-network
+
+  # ============================================
+  # Frontend-Market (Static Files)
+  # ============================================
+  frontend-market:
+    image: habom/frontend-market:1.0.7
+    container_name: habom-market-frontend
+    restart: always
+    env_file:
+      - ./frontend-market/.env.production
+    ports:
+      - "${FRONTEND_MARKET_PORT}:3000"
+    depends_on:
+      - backend-market
+      - backend-pay
+    networks:
+      - market-network
+
+networks:
+  market-network:
+    driver: bridge

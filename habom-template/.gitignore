@@ -1,0 +1,31 @@
+# 환경변수 파일 (민감 정보 포함)
+.env
+.env.local
+.env.production
+.env.development
+backend-market/.env.production
+backend-market/.env.development
+backend-pay/.env.production
+backend-pay/.env.development
+frontend-market/.env.production
+frontend-market/.env.development
+
+# 자동 생성된 키 파일
+generated-keys/
+generated-keys.txt
+
+# MySQL 데이터
+mysql-market/data/
+mysql-pay/data/
+
+# 업로드 파일
+backend-market/uploads/
+
+# Node.js
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# OS
+.DS_Store
+Thumbs.db

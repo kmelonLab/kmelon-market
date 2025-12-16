@@ -77,8 +77,21 @@ Build useful tools that empower individual developers and enable creativity, pro
 | `alpha` / `beta` builds | Sponsor only |
 | Feature requests | Sponsor priority |
 
-🔧 Easy integration guides & examples coming soon.  
+🔧 Easy integration guides & examples coming soon.
 🛠 사용 가이드 및 예제는 곧 제공될 예정입니다.
+
+---
+
+## 🔗 Live Service / Demo (서비스 링크)
+
+| Type | URL | Note |
+|------|-----|------|
+| 🌐 Production | https://none.com | 실제 서비스 (comming soon ...) |
+| 🧪 Demo | https://market-demo.gpt.io.kr | ID: `demo@demo.com` / PW: `demo1234` |
+
+> ⚠️ **Demo Notice**: The demo account has admin privileges. If data is deleted or the service is disrupted for other users, the demo will be suspended immediately.
+
+> ⚠️ **데모 안내**: 데모 계정은 관리자 권한으로 접속됩니다. 내부 데이터 삭제 또는 다른 사용자의 이용을 방해하는 경우, 데모 서비스는 즉시 중단됩니다.
 
 ---
 
@@ -87,9 +100,10 @@ Build useful tools that empower individual developers and enable creativity, pro
 | Platform | Link |
 |----------|------|
 | GitHub | https://github.com/kmelonLab |
-| Docker Hub | https://hub.docker.com/u/kmelon |
-| Email | contact@kmelonlab.dev |
-| X(Twitter) | https://x.com/kmelonLab | *(예: 후원자 감사 메시지 게시 가능)*  
+| Docker Hub | https://hub.docker.com/u/habom |
+| Email | kmelon.zero@gmail.com |
+| X(Twitter) | https://x.com/habom_IT | *(예: 후원자 감사 메시지 게시 가능)*  
+| Youtube | https://www.youtube.com/@habomIT |
 
 Feel free to reach out anytime!  
 언제든 편하게 연락주세요!
