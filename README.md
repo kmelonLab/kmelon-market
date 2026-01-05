@@ -96,8 +96,12 @@ Build useful tools that empower individual developers and enable creativity, pro
 
 | Type | URL | Note |
 |------|-----|------|
-| 🌐 Production | https://none.com | 실제 서비스 (comming soon ...) |
+| 🌐 Production | https://market.habom.kr | Live Service  |
 | 🧪 Demo | https://market-demo.gpt.io.kr | ID: `demo@demo.com` / PW: `demo1234` |
+
+> 💳 **Live Service Notice**: The production service processes real payments. Please be careful when making purchases.
+
+> 💳 **운영 서비스 안내**: 운영 서비스는 실제 결제가 진행됩니다. 구매 시 유의해 주세요.
 
 > ⚠️ **Demo Notice**: The demo account has admin privileges. If data is deleted or the service is disrupted for other users, the demo will be suspended immediately.
 

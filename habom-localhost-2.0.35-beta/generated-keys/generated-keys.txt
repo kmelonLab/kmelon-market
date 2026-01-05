@@ -1,0 +1,68 @@
+# Habom Market - 생성된 보안 키
+# 생성 일시: 2025-12-16T00:26:11.766Z
+#
+# ⚠️  보안 경고: 이 파일은 절대 Git에 커밋하지 마세요!
+# 안전한 곳에 백업 후 삭제하는 것을 권장합니다.
+
+# ==============================================================================
+# 공통 키
+# ==============================================================================
+
+# JWT Secret (backend-market, backend-pay 공통 사용)
+JWT_SECRET=5875383480bdb38d8f3ce9df9c64dc0139499da967f5e2f2491ff5141577adab60d5d1f55f6f77f246d71bc7bcd8c65619cd261530760d6e1fab12f74b664a68
+
+# ==============================================================================
+# MySQL 비밀번호 (.env, backend-market, backend-pay)
+# ==============================================================================
+
+MYSQL_ROOT_PASSWORD=uq&Qi%RMpDjNff%B^ut4SmWk
+MYSQL_PASSWORD=$CAf@McTY&9OczrcT5RInCYD
+
+# ==============================================================================
+# Backend-Pay 전용 키
+# ==============================================================================
+
+API_KEY=161652421a9d0b991b1868d74b96f50cd71e36c1b81f8aac0c80fdd8760073b9
+WEBHOOK_SIGNATURE_SECRET=6b791ae6bc787d5b95d6bf577f58cca0edb6366544bee97b33224f53d22dd2e0
+ENCRYPTION_MASTER_KEY=jXSw33182i8O5+lBOZAtSZawsC5nvh/19DBxegSWhxU=
+SWAGGER_PASSWORD=4090b930926564eef809bcf9f6bb1027
+
+# ==============================================================================
+# 키 사용 위치 매핑
+# ==============================================================================
+
+# .env (Docker Compose)
+# - MYSQL_ROOT_PASSWORD
+# - MYSQL_PASSWORD
+
+# backend-market/.env.production
+# - JWT_SECRET
+# - DB_PASSWORD (= MYSQL_PASSWORD)
+
+# backend-pay/.env.production
+# - JWT_SECRET (backend-market과 동일)
+# - API_KEY
+# - WEBHOOK_SIGNATURE_SECRET
+# - ENCRYPTION_MASTER_KEY
+# - SWAGGER_PASSWORD
+# - DATABASE_URL에 MYSQL_PASSWORD 포함
+
+# ==============================================================================
+# 다음 단계
+# ==============================================================================
+
+1. generated-keys/ 폴더의 파일들을 각 위치로 복사:
+   - .env → habom-template-shared/.env
+   - backend-market.env.production → habom-template-shared/backend-market/.env.production
+   - backend-pay.env.production → habom-template-shared/backend-pay/.env.production
+   - frontend-market.env.production → habom-template-shared/frontend-market/.env.production
+
+2. 각 파일에서 <YOUR_...> 부분을 실제 값으로 수정:
+   - TossPayments API 키
+   - 도메인 URL
+   - SMTP 설정
+   - IP 화이트리스트
+
+3. 이 파일(generated-keys.txt)을 안전한 곳에 백업
+
+4. generated-keys/ 폴더 삭제 (보안)
