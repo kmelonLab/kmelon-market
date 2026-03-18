@@ -97,7 +97,7 @@ Build useful tools that empower individual developers and enable creativity, pro
 | Type | URL | Note |
 |------|-----|------|
 | 🌐 Production | https://market.habom.kr | Live Service  |
-| 🧪 Demo | https://market-demo.gpt.io.kr | ID: `demo@demo.com` / PW: `demo1234` |
+| 🧪 Demo | https://market-demo.melodyssey.kr | ID: `demo@demo.com` / PW: `demo1234` |
 
 > 💳 **Live Service Notice**: The production service processes real payments. Please be careful when making purchases.
 
